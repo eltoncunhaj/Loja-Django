@@ -3,4 +3,5 @@ from apploja import views
 
 urlpatterns = [
     path('',views.index,name='index'),
+
 ]

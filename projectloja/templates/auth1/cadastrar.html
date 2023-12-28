@@ -1,0 +1,89 @@
+{% extends 'nav.html' %}
+
+{% block title %} 
+    Loja Django
+{% endblock title %}
+
+  {% block style %}
+     <style>
+       .btn{
+        font-family: "Raleway" sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 50px;
+        transition: 0.55s;
+        color: rgb(255, 255, 255);
+        background-color: rgba(6, 255, 47, 0.979);
+        border: 2px solid rgba(0,0,0,0.879)
+        }
+      </style>
+{% endblock style %}
+    
+
+
+{% block body %}
+<section id="contact" class="contact">
+  <div class="container">
+
+<div class="section-title" data-aos="fade-up">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+      <h1 data-aos="fade-up">Cadastrar</h1>
+      <div class="container" data-aos="fade-up" data-aos-delay="400">
+      </div>
+       {% for message in messages %}
+      <div class="alert alert-warning alert-{{message.tags}}" role="alert">
+        <strong>{{message}}</strong> 
+        <button type="button" class="btn-close" data-bs-dimiss="alert" aria-label="Close"></button>
+      </div>  
+      {% endfor %}
+
+      <form action="/sanauth/cadastrar/" method="post"> {% csrf_token %}
+          
+        <br>
+        
+        
+        <label for="email">Email</label>
+         <div class="form-group">
+          <input type="email" class="form-control id="email" name="email" required>
+         </div>
+        <label for="pass1">Senha</label>
+        <div class="form-group">
+        <input type="password" class="form-control" id="pass1" name="pass1" required>
+        </div>
+        <label for="pass2">Confirmar Senha</label>
+        <div class="form-group">
+        <input type="password" class="form-control" id="pass2" name="pass2" required>
+        </div>
+        <br>
+        <button type="submit" class="btn">Cadastrar</button>
+        
+        <br>
+        Já é cadastrado? <a href="/sanauth/login/">login</a>
+        <br>
+        <span> Esqueceu sua senha? <a href="/">Recuperar senha</a> </span>
+        
+        <br>
+        <a href="/">Home</a>
+        </form>
+      </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+  
+</section>
+
+{% endblock body %}
