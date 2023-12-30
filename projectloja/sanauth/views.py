@@ -31,10 +31,27 @@ def cadastrar(request):
     return render(request,'auth1/cadastrar.html')
 
 
-    
-    
-    return render(request,'auth1/cadastrar.html')
 
 def handlelogin(request):
+    if request.method=="POST": 
+        username = request.POST['email']
+        userpassword = request.POST['pass1']
+        myuser = authenticate(username=username,password=userpassword)
+
+        if myuser is not None:
+            login(request,myuser)
+            messages.success(request,"login com sucesso")
+            return render(request,'index.html')
+        
+        else:
+            messages.error(request,"Senha ou email não correspondem")
+            return redirect('/sanauth/login')
     return render(request,'auth1/login.html')
+
+
+
+def handlelogout(request):
+    logout(request)
+    messages.success(request,"Saindo do sistema com sucessso")
+    return redirect('/sanauth/login')
 

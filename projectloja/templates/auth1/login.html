@@ -53,7 +53,7 @@
       </div>  
       {% endfor %}
       
-        <form action="/sanauth/cadastrar" method="post">{% csrf_token %}
+        <form action="/sanauth/login/" method="post">{% csrf_token %}
           
         <br>
         
@@ -70,9 +70,9 @@
         <br>
         <button type="submit" class="btn">Login</button>
         <hr>
-         Não é cadastrado? <a href="/sanauth/cadastrar">Cadastrar</a>
+         Não é cadastrado? <a href="/sanauth/cadastrar/">Cadastrar</a>
          <br>
-         Esqueceu a senha? <a href="/">Recuperar senha</a>
+         <span>Esqueceu a senha? <a href="/">Recuperar senha</a></span>
         <br>
         <a href="/">Home</a>
         </form>
