@@ -3,6 +3,7 @@ import os
 from django.contrib.messages import constants as messages
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -120,4 +121,11 @@ MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_HOST ='smtp.outlook.com'
+EMAIL_HOST_USER ='eltonsilvano@outlook.com'
+EMAIL_HOST_PASSWORD ='Jeova97238476'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+
+DEFAULT_AUTO_FIELD ='django.db.models.BigAutoField'
