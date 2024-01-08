@@ -71,8 +71,11 @@ WSGI_APPLICATION = 'projectloja.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'loja11',
+        'USER':'postgres',
+        'PASSWORD':'@#@#@#@#1111111000&$$',
+        'HOST':'localhost',
     }
 }
 
@@ -122,8 +125,8 @@ MESSAGE_TAGS = {
 }
 
 EMAIL_HOST ='smtp.outlook.com'
-EMAIL_HOST_USER ='eltonsilvano@outlook.com'
-EMAIL_HOST_PASSWORD ='Jeova97238476'
+EMAIL_HOST_USER ='elta5756464o@outlook.com'
+EMAIL_HOST_PASSWORD ='senha'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
